@@ -13,7 +13,7 @@ schemas	default	id	default
 								moduleId	kernel
 								intransitive	false
 						params	
-						sources	cats:core/src/main/scala/	cats:core/src/main/scala/
+						sources	cats:core/src/main/scala	cats:core/src/main/scala
 						binaries	
 						resources	
 						bloopSpec	None
@@ -30,7 +30,8 @@ schemas	default	id	default
 								intransitive	false
 						params	
 						sources	cats:kernel/src/main/scala	cats:kernel/src/main/scala
-							kernel-boiler/gen	kernel-boiler/gen
+							cats:kernel/src/main/scala-2.12-	cats:kernel/src/main/scala-2.12-
+							kernel-boiler-gen	kernel-boiler-gen
 						binaries	
 						resources	
 						bloopSpec	None

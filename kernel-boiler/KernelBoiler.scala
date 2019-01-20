@@ -16,7 +16,7 @@ import java.io.File
 object KernelBoiler {
 
   def main(args: Array[String]): Unit = {
-    gen(new File("kernel-boiler/gen"))
+    gen(new File("kernel-boiler-gen"))
   }
 
   import scala.StringContext._
