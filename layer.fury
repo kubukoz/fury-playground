@@ -1,0 +1,169 @@
+version	1
+schemas	default	id	default
+		projects	cats	id	cats
+				modules	core	id	core
+						kind	library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+						after	cats/kernel	projectId	cats
+								moduleId	kernel
+								intransitive	false
+						params	
+						sources	cats:core/src/main/scala/	cats:core/src/main/scala/
+						binaries	
+						resources	
+						bloopSpec	None
+					kernel	id	kernel
+						kind	library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+						after	cats/kernel-boiler	projectId	cats
+								moduleId	kernel-boiler
+								intransitive	false
+						params	
+						sources	cats:kernel/src/main/scala	cats:kernel/src/main/scala
+							kernel-boiler/gen	kernel-boiler/gen
+						binaries	
+						resources	
+						bloopSpec	None
+					kernel-boiler	id	kernel-boiler
+						kind	application
+						main	Some	io.example.KernelBoiler
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+						after	
+						params	
+						sources	kernel-boiler	kernel-boiler
+						binaries	
+						resources	
+						bloopSpec	None
+				main	Some	core
+				license	unknown
+				description	
+			cats-effect	id	cats-effect
+				modules	core	id	core
+						kind	library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	java
+							moduleId	compiler
+							intransitive	false
+						after	cats/core	projectId	cats
+								moduleId	core
+								intransitive	false
+						params	
+						sources	
+						binaries	
+						resources	
+						bloopSpec	None
+				main	Some	core
+				license	unknown
+				description	
+			doobie	id	doobie
+				modules	core	id	core
+						kind	library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	java
+							moduleId	compiler
+							intransitive	false
+						after	fs2/core	projectId	fs2
+								moduleId	core
+								intransitive	false
+						params	
+						sources	
+						binaries	
+						resources	
+						bloopSpec	None
+				main	Some	core
+				license	unknown
+				description	
+			fs2	id	fs2
+				modules	core	id	core
+						kind	library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	java
+							moduleId	compiler
+							intransitive	false
+						after	cats-effect/core	projectId	cats-effect
+								moduleId	core
+								intransitive	false
+						params	
+						sources	
+						binaries	
+						resources	
+						bloopSpec	None
+				main	Some	core
+				license	unknown
+				description	
+			http4s	id	http4s
+				modules	core	id	core
+						kind	library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	java
+							moduleId	compiler
+							intransitive	false
+						after	fs2/core	projectId	fs2
+								moduleId	core
+								intransitive	false
+						params	
+						sources	
+						binaries	
+						resources	
+						bloopSpec	None
+				main	Some	core
+				license	unknown
+				description	
+			presentation	id	presentation
+				modules	core	id	core
+						kind	library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	java
+							moduleId	compiler
+							intransitive	false
+						after	doobie/core	projectId	doobie
+								moduleId	core
+								intransitive	false
+							http4s/core	projectId	http4s
+								moduleId	core
+								intransitive	false
+						params	
+						sources	
+						binaries	
+						resources	
+						bloopSpec	None
+				main	Some	core
+				license	unknown
+				description	
+		repos	.scala	id	.scala
+				repo	git@github.com:propensive/.scala.git
+				refSpec	master
+				local	None
+			cats	id	cats
+				repo	git@github.com:typelevel/cats.git
+				refSpec	master
+				local	None
+		imports	.scala:scala-2.12.8	repo	.scala
+				schema	scala-2.12.8
+		main	Some	cats
+main	default
+aliases	
