@@ -9,11 +9,42 @@ schemas	default	id	default
 						compiler	projectId	scala
 							moduleId	compiler
 							intransitive	true
-						after	cats/kernel	projectId	cats
+						after	cats/core-boiler	projectId	cats
+								moduleId	core-boiler
+								intransitive	false
+							cats/kernel	projectId	cats
 								moduleId	kernel
 								intransitive	false
-						params	
+							cats/macros	projectId	cats
+								moduleId	macros
+								intransitive	false
+							kind-projector/core	projectId	kind-projector
+								moduleId	core
+								intransitive	false
+							macro-paradise/core	projectId	macro-paradise
+								moduleId	core
+								intransitive	false
+							simulacrum/core	projectId	simulacrum
+								moduleId	core
+								intransitive	false
+						params	Ypartial-unification	Ypartial-unification
+							language:experimental.macros	language:experimental.macros
 						sources	cats:core/src/main/scala	cats:core/src/main/scala
+							core-boiler-gen	core-boiler-gen
+						binaries	
+						resources	
+						bloopSpec	None
+					core-boiler	id	core-boiler
+						kind	application
+						main	Some	io.example.Boilerplate
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+						after	
+						params	
+						sources	core-boiler	core-boiler
 						binaries	
 						resources	
 						bloopSpec	None
@@ -49,6 +80,114 @@ schemas	default	id	default
 						binaries	
 						resources	
 						bloopSpec	None
+					macros	id	macros
+						kind	library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+						after	machinist/core	projectId	machinist
+								moduleId	core
+								intransitive	false
+						params	
+						sources	cats:macros/src/main/scala	cats:macros/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+				main	Some	core
+				license	unknown
+				description	
+			kind-projector	id	kind-projector
+				modules	core	id	core
+						kind	plugin
+						main	Some	d_m.KindProjector
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+						after	
+						params	
+						sources	kind-projector:src/main/scala	kind-projector:src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+				main	Some	core
+				license	unknown
+				description	
+			machinist	id	machinist
+				modules	core	id	core
+						kind	library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+						after	
+						params	
+						sources	machinist:src/main/scala	machinist:src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+				main	Some	core
+				license	unknown
+				description	
+			macro-compat	id	macro-compat
+				modules	core	id	core
+						kind	library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+						after	
+						params	
+						sources	macro-compat:core/src/main/scala_2.11+	macro-compat:core/src/main/scala_2.11+
+						binaries	
+						resources	
+						bloopSpec	None
+				main	Some	core
+				license	unknown
+				description	
+			macro-paradise	id	macro-paradise
+				modules	core	id	core
+						kind	plugin
+						main	Some	org.scalamacros.paradise.Plugin
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+						after	
+						params	
+						sources	paradise:plugin/src/main/scala	paradise:plugin/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+				main	Some	core
+				license	unknown
+				description	
+			simulacrum	id	simulacrum
+				modules	core	id	core
+						kind	library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+						after	macro-compat/core	projectId	macro-compat
+								moduleId	core
+								intransitive	false
+						params	
+						sources	simulacrum:core/src/main/scala	simulacrum:core/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
 				main	Some	core
 				license	unknown
 				description	
@@ -58,6 +197,26 @@ schemas	default	id	default
 				local	None
 			cats	id	cats
 				repo	git@github.com:typelevel/cats.git
+				refSpec	master
+				local	None
+			kind-projector	id	kind-projector
+				repo	git@github.com:non/kind-projector.git
+				refSpec	master
+				local	None
+			machinist	id	machinist
+				repo	git@github.com:typelevel/machinist.git
+				refSpec	master
+				local	None
+			macro-compat	id	macro-compat
+				repo	git@github.com:milessabin/macro-compat.git
+				refSpec	master
+				local	None
+			paradise	id	paradise
+				repo	git@github.com:scalamacros/paradise.git
+				refSpec	2.12.8
+				local	None
+			simulacrum	id	simulacrum
+				repo	git@github.com:mpilquist/simulacrum.git
 				refSpec	master
 				local	None
 		imports	.scala:scala-2.12.8	repo	.scala
