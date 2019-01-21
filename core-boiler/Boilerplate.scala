@@ -1,6 +1,6 @@
 package io.example
 
-import java.nio.file.{Files, StandardOpenOption, Files}
+import java.nio.file.{Files, StandardOpenOption, Paths}
 import java.io.File
 
 /**

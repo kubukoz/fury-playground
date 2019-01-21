@@ -95,7 +95,7 @@ schemas	default	id	default
 						binaries	
 						resources	
 						bloopSpec	None
-				main	Some	kernel
+				main	Some	core
 				license	unknown
 				description	
 			kind-projector	id	kind-projector
