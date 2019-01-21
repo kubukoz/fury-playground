@@ -16,7 +16,7 @@ import java.io.File
 object KernelBoiler {
 
   def main(args: Array[String]): Unit = {
-    gen(Paths.get(sys.env("SHARED")).resolve("cats-core-boiler-gen").toFile)
+    gen(Paths.get(sys.env("SHARED")).resolve("cats-kernel-boiler-gen").toFile)
   }
 
   import scala.StringContext._
