@@ -1,6 +1,6 @@
 package io.example
 
-import java.nio.file.{Files, StandardOpenOption}
+import java.nio.file.{Files, StandardOpenOption, Files}
 import java.io.File
 
 /**
@@ -16,7 +16,7 @@ object Boilerplate {
   import scala.StringContext._
 
   def main(args: Array[String]): Unit = {
-    gen(new File("core-boiler-gen"))
+    gen(Paths.get(sys.env("SHARED")).resolve("cats-kernel-boiler-gen").toFile)
   }
 
   implicit final class BlockHelper(private val sc: StringContext) extends AnyVal {

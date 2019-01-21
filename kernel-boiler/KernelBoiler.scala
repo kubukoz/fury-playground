@@ -1,7 +1,7 @@
 package io.example
 
 import KernelBoiler.TemplateVals
-import java.nio.file.{Files, StandardOpenOption}
+import java.nio.file.{Files, StandardOpenOption, Paths}
 import java.io.File
 
 /**
@@ -16,7 +16,7 @@ import java.io.File
 object KernelBoiler {
 
   def main(args: Array[String]): Unit = {
-    gen(new File("kernel-boiler-gen"))
+    gen(Paths.get(sys.env("SHARED")).resolve("cats-core-boiler-gen").toFile)
   }
 
   import scala.StringContext._
