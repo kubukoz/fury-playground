@@ -30,6 +30,7 @@ schemas	default	id	default
 						params	Ypartial-unification	Ypartial-unification
 							language:experimental.macros	language:experimental.macros
 						sources	cats:core/src/main/scala	cats:core/src/main/scala
+							cats:core/src/main/scala-2.12-	cats:core/src/main/scala-2.12-
 							shared:cats-core-boiler-gen	shared:cats-core-boiler-gen
 						binaries	
 						resources	
