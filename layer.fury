@@ -1,4 +1,4 @@
-version	1
+version	2
 schemas	default	id	default
 		projects	cats	id	cats
 				modules	core	id	core
@@ -97,7 +97,7 @@ schemas	default	id	default
 						binaries	
 						resources	
 						bloopSpec	None
-				main	Some	core
+				main	Some	kernel-boiler
 				license	unknown
 				description	
 			kind-projector	id	kind-projector
@@ -194,31 +194,38 @@ schemas	default	id	default
 				description	
 		repos	.scala	id	.scala
 				repo	git@github.com:propensive/.scala.git
-				refSpec	master
+				track	master
+				commit	f0f96b58b78bad6fec5000a9fab3610de7ec7a9f
 				local	None
 			cats	id	cats
 				repo	git@github.com:typelevel/cats.git
-				refSpec	master
+				track	master
+				commit	9bed9b58cbd77d38ae2bf093b4f04643301cd686
 				local	None
 			kind-projector	id	kind-projector
 				repo	git@github.com:non/kind-projector.git
-				refSpec	master
+				track	master
+				commit	06b23bee3129269ba10e7cf8035f7c7ea2068a64
 				local	None
 			machinist	id	machinist
 				repo	git@github.com:typelevel/machinist.git
-				refSpec	master
+				track	master
+				commit	22f69e1ac37e19a3bc3f4e5c9553b559dfc779d4
 				local	None
 			macro-compat	id	macro-compat
 				repo	git@github.com:milessabin/macro-compat.git
-				refSpec	master
+				track	master
+				commit	e9b9a94762ee2a43364e4cc6f24083030937576d
 				local	None
 			paradise	id	paradise
 				repo	git@github.com:scalamacros/paradise.git
-				refSpec	2.12.8
+				track	2.12.8
+				commit	1d55f7b0902b35d55d6d1dfc94ae8680e622c4da
 				local	None
 			simulacrum	id	simulacrum
 				repo	git@github.com:mpilquist/simulacrum.git
-				refSpec	master
+				track	master
+				commit	b06e386435c4290566b7be75f3edebab6db00139
 				local	None
 		imports	.scala:scala-2.12.8	repo	.scala
 				schema	scala-2.12.8
