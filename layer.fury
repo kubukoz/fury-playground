@@ -136,6 +136,28 @@ schemas	default	id	default
 				main	Some	core
 				license	unknown
 				description	
+			cats-mtl	id	cats-mtl
+				modules	core	id	core
+						kind	Library
+						main	None
+						plugin	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+							hidden	false
+						after	cats/core	projectId	cats
+								moduleId	core
+								intransitive	false
+								hidden	false
+						params	
+						sources	cats-mtl:core/src/main/scala	cats-mtl:core/src/main/scala
+						binaries	
+						resources	
+						bloopSpec	None
+				main	Some	core
+				license	unknown
+				description	
 			kind-projector	id	kind-projector
 				modules	core	id	core
 						kind	Plugin
@@ -249,6 +271,11 @@ schemas	default	id	default
 				track	master
 				commit	cfc0ca5a0e52c3edf43cc73cfb49b62e7127cb50
 				local	None
+			cats-mtl	id	cats-mtl
+				repo	git@github.com:typelevel/cats-mtl.git
+				track	master
+				commit	d744fd08bc46d16429bbcec0ad8fddc1e0626eca
+				local	None
 			kind-projector	id	kind-projector
 				repo	git@github.com:non/kind-projector.git
 				track	master
@@ -276,6 +303,6 @@ schemas	default	id	default
 				local	None
 		imports	.scala:scala-2.12.8	repo	.scala
 				schema	scala-2.12.8
-		main	Some	cats-effect
+		main	Some	cats-mtl
 main	default
 aliases	
