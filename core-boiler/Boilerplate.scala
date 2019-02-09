@@ -16,7 +16,7 @@ object Boilerplate {
   import scala.StringContext._
 
   def main(args: Array[String]): Unit = {
-    gen(Paths.get(sys.env("SHARED")).resolve("cats-core-boiler-gen").toFile)
+    gen(Paths.get(System.getenv("SHARED")).resolve("cats-core-boiler-gen").toFile)
   }
 
   implicit final class BlockHelper(private val sc: StringContext) extends AnyVal {
