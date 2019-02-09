@@ -1,32 +1,39 @@
-version	2
+version	3
 schemas	default	id	default
 		projects	cats	id	cats
 				modules	core	id	core
-						kind	library
+						kind	Library
 						main	None
 						plugin	None
 						manifest	
 						compiler	projectId	scala
 							moduleId	compiler
 							intransitive	true
+							hidden	false
 						after	cats/core-boiler	projectId	cats
 								moduleId	core-boiler
 								intransitive	false
+								hidden	false
 							cats/kernel	projectId	cats
 								moduleId	kernel
 								intransitive	false
+								hidden	false
 							cats/macros	projectId	cats
 								moduleId	macros
 								intransitive	false
+								hidden	false
 							kind-projector/core	projectId	kind-projector
 								moduleId	core
 								intransitive	false
+								hidden	false
 							macro-paradise/core	projectId	macro-paradise
 								moduleId	core
 								intransitive	false
+								hidden	false
 							simulacrum/core	projectId	simulacrum
 								moduleId	core
 								intransitive	false
+								hidden	false
 						params	Ypartial-unification	Ypartial-unification
 							language:experimental.macros	language:experimental.macros
 						sources	cats:core/src/main/scala	cats:core/src/main/scala
@@ -36,13 +43,14 @@ schemas	default	id	default
 						resources	
 						bloopSpec	None
 					core-boiler	id	core-boiler
-						kind	application
+						kind	Application
 						main	Some	io.example.Boilerplate
 						plugin	None
 						manifest	
 						compiler	projectId	scala
 							moduleId	compiler
 							intransitive	true
+							hidden	false
 						after	
 						params	
 						sources	core-boiler	core-boiler
@@ -50,16 +58,18 @@ schemas	default	id	default
 						resources	
 						bloopSpec	None
 					kernel	id	kernel
-						kind	library
+						kind	Library
 						main	None
 						plugin	None
 						manifest	
 						compiler	projectId	scala
 							moduleId	compiler
 							intransitive	true
+							hidden	false
 						after	cats/kernel-boiler	projectId	cats
 								moduleId	kernel-boiler
 								intransitive	false
+								hidden	false
 						params	
 						sources	cats:kernel/src/main/scala	cats:kernel/src/main/scala
 							cats:kernel/src/main/scala-2.12-	cats:kernel/src/main/scala-2.12-
@@ -68,13 +78,14 @@ schemas	default	id	default
 						resources	
 						bloopSpec	None
 					kernel-boiler	id	kernel-boiler
-						kind	application
+						kind	Application
 						main	Some	io.example.KernelBoiler
 						plugin	None
 						manifest	
 						compiler	projectId	scala
 							moduleId	compiler
 							intransitive	true
+							hidden	false
 						after	
 						params	
 						sources	kernel-boiler	kernel-boiler
@@ -82,33 +93,36 @@ schemas	default	id	default
 						resources	
 						bloopSpec	None
 					macros	id	macros
-						kind	library
+						kind	Library
 						main	None
 						plugin	None
 						manifest	
 						compiler	projectId	scala
 							moduleId	compiler
 							intransitive	true
+							hidden	false
 						after	machinist/core	projectId	machinist
 								moduleId	core
 								intransitive	false
+								hidden	false
 						params	
 						sources	cats:macros/src/main/scala	cats:macros/src/main/scala
 						binaries	
 						resources	
 						bloopSpec	None
-				main	Some	kernel-boiler
+				main	Some	core
 				license	unknown
 				description	
 			kind-projector	id	kind-projector
 				modules	core	id	core
-						kind	plugin
+						kind	Plugin
 						main	Some	d_m.KindProjector
 						plugin	None
 						manifest	
 						compiler	projectId	scala
 							moduleId	compiler
 							intransitive	true
+							hidden	false
 						after	
 						params	
 						sources	kind-projector:src/main/scala	kind-projector:src/main/scala
@@ -120,13 +134,14 @@ schemas	default	id	default
 				description	
 			machinist	id	machinist
 				modules	core	id	core
-						kind	library
+						kind	Library
 						main	None
 						plugin	None
 						manifest	
 						compiler	projectId	scala
 							moduleId	compiler
 							intransitive	true
+							hidden	false
 						after	
 						params	
 						sources	machinist:src/main/scala	machinist:src/main/scala
@@ -138,13 +153,14 @@ schemas	default	id	default
 				description	
 			macro-compat	id	macro-compat
 				modules	core	id	core
-						kind	library
+						kind	Library
 						main	None
 						plugin	None
 						manifest	
 						compiler	projectId	scala
 							moduleId	compiler
 							intransitive	true
+							hidden	false
 						after	
 						params	
 						sources	macro-compat:core/src/main/scala_2.11+	macro-compat:core/src/main/scala_2.11+
@@ -156,13 +172,14 @@ schemas	default	id	default
 				description	
 			macro-paradise	id	macro-paradise
 				modules	core	id	core
-						kind	plugin
+						kind	Plugin
 						main	Some	org.scalamacros.paradise.Plugin
 						plugin	Some	macroparadise
 						manifest	
 						compiler	projectId	scala
 							moduleId	compiler
 							intransitive	true
+							hidden	false
 						after	
 						params	
 						sources	paradise:plugin/src/main/scala	paradise:plugin/src/main/scala
@@ -174,16 +191,18 @@ schemas	default	id	default
 				description	
 			simulacrum	id	simulacrum
 				modules	core	id	core
-						kind	library
+						kind	Library
 						main	None
 						plugin	None
 						manifest	
 						compiler	projectId	scala
 							moduleId	compiler
 							intransitive	true
+							hidden	false
 						after	macro-compat/core	projectId	macro-compat
 								moduleId	core
 								intransitive	false
+								hidden	false
 						params	
 						sources	simulacrum:core/src/main/scala	simulacrum:core/src/main/scala
 						binaries	
