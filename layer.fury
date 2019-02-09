@@ -158,7 +158,7 @@ schemas	default	id	default
 				modules	core	id	core
 						kind	plugin
 						main	Some	org.scalamacros.paradise.Plugin
-						plugin	None
+						plugin	Some	macroparadise
 						manifest	
 						compiler	projectId	scala
 							moduleId	compiler
